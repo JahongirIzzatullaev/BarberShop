@@ -1,10 +1,10 @@
 $speed: 0.6s;
 $delay: ($speed * .5);
 $easing: cubic-bezier(.55, 0, .1, 1);
-
+$color-hover: #a06600;
 @media only screen and (min-width: 40em) {
 
-  .modal-overlay {
+  .modal-overlay, .modal-overlay-login, .modal-overlay-sign-up {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -32,7 +32,7 @@ $easing: cubic-bezier(.55, 0, .1, 1);
 /**
  * Modal
  */
-.modal {
+.modal, .modal-login, .modal-sign-up {
   display: flex;
   position: relative;
   margin: 0 auto;
@@ -46,13 +46,13 @@ $easing: cubic-bezier(.55, 0, .1, 1);
   backface-visibility: hidden;
   transform: scale(1.2);
   transition: all $speed $easing;
-  .modal-header-top {
+  .modal-header-top, .modal-header-top-login, .modal-header-top-sign-up {
     display: block;
     background-color: #000;
     height: 50px;
     width: 100%;
   }
-  .close-modal {
+  .close-modal, .close-modal-login, .close-modal-sign-up {
     position: absolute;
     cursor: pointer;
     top: 5px;
@@ -61,25 +61,15 @@ $easing: cubic-bezier(.55, 0, .1, 1);
     backface-visibility: hidden;
     transition: opacity $speed $easing, transform $speed $easing;
     transition-delay: $delay;
-
     svg {
       fill: #eee;
       width: 1.75em;
       height: 1.75em;
     }
   }
-  .modal-content-card {
+  .modal-content-card, .modal-content-card-login, .modal-content-card-sign-up {
     margin-top: 50px;
   }
-  // close modal
-
-  //.modal-content {
-  //  opacity: 0;
-  //  backface-visibility: hidden;
-  //  transition: opacity $speed $easing;
-  //  transition-delay: $delay;
-  //}
-  // content
 
   &.active {
     visibility: visible;
@@ -89,9 +79,162 @@ $easing: cubic-bezier(.55, 0, .1, 1);
     //.modal-content {
     //  opacity: 1;
     //}
-    .close-modal {
+    .close-modal, .close-modal-login, .close-modal-sign-up {
       transform: translateY(10px);
       opacity: 1;
+    }
+  }
+}
+
+.modal-login {
+  background-size: auto;
+  background: url("../images/photo-news-background-image.jpg") repeat 50% 50%;
+  max-width: 460px;
+  .modal-header-top-login {
+    background-color: #000;
+    .modal-content-card-login {
+      padding: 20px 60px 40px 60px;
+      font-family: "PT Sans Narrow bold", sans-serif;
+      text-transform: uppercase;
+      ul {
+        li.login-title {
+          margin-bottom: 15px;
+          font-size: 30px;
+          line-height: 42px;
+        }
+        li.login-show-text {
+          margin-bottom: 20px;
+        }
+        li.first-input, li.second-input {
+          display: block;
+          input {
+            width: 100%;
+            margin-bottom: 18px;
+            border: 2px solid #000;
+            background-size: auto;
+            background-repeat: no-repeat;
+            text-decoration: none;
+            background-color: #f9f6f3;
+            text-align: left;
+            text-transform: uppercase;
+            padding: 8px 12px;
+            background-position: 311px center;
+          }
+
+          input:focus {
+            outline: none; /* убрать рамку */
+          }
+        }
+        li.first-input {
+          input {
+            background-image: url("../images/user-login.jpg");
+          }
+        }
+        li.second-input {
+          input {
+            background-image: url("../images/lock-login.jpg");
+          }
+        }
+        .save-password {
+          margin-bottom: 10px;
+          label {
+            cursor: pointer;
+            top: -6px;
+            position: relative;
+            input {
+              width: 15px;
+              height: 15px;
+              top: 2px;
+              position: relative;
+              margin-right: 10px;
+            }
+          }
+          a {
+            float: right;
+            color: #000;
+            text-decoration: underline;
+          }
+        }
+        li {
+          a.link-style {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+          }
+          a.link-style:hover {
+            background-color: $color-hover;
+          }
+        }
+      }
+    }
+  }
+}
+
+.modal-sign-up {
+  background-size: auto;
+  background: url("../images/photo-news-background-image.jpg") repeat 50% 50%;
+  max-width: 460px;
+  .modal-content-card-sign-up {
+    .modal-record {
+      padding: 20px 60px 40px 60px;
+      .modal-record-items {
+        .modal-record-item-title {
+          margin-bottom: 15px;
+          font-family: 'PT Sans Narrow bold', sans-serif;
+          font-size: 30px;
+          font-weight: 700;
+          line-height: 42px;
+          text-transform: uppercase;
+          color: #000;
+        }
+        .modal-record-form {
+          .modal-record-form-text {
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 700;
+            font-family: 'PT Sans Narrow bold', sans-serif;
+            display: block;
+            color: #000;
+            text-align: left;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+          }
+
+          // Нужно исрправить
+          .col-md-6 {
+            padding: 0 15px;
+            font-family: 'PT Sans Narrow bold', sans-serif;
+            font-weight: 700;
+            color: #000;
+            text-transform: uppercase;
+            font-size: 14px;
+            line-height: 24px;
+            label {
+              margin-left: 10px;
+            }
+            input {
+              text-transform: uppercase;
+              width: 100%;
+              padding: 7px;
+              margin-bottom: 10px;
+              border-color: #000;
+              font-family: 'PT Sans Narrow bold', sans-serif;
+              font-weight: 300;
+            }
+            input:focus {
+              outline: none;
+            }
+          }
+        }
+        .modal-record-get-form {
+          display: block;
+          text-decoration: none;
+        }
+        .modal-record-get-form:hover {
+          background-color: $color-hover;
+          color: #fff;
+        }
+      }
     }
   }
 }
@@ -103,7 +246,7 @@ $easing: cubic-bezier(.55, 0, .1, 1);
   h1 {
     font-size: 1.5rem;
   }
-  .modal {
+  .modal, .modal-login, .modal-sign-up {
     position: fixed;
     top: 0;
     left: 0;
@@ -115,7 +258,7 @@ $easing: cubic-bezier(.55, 0, .1, 1);
     padding: 0 !important;
   }
 
-  .close-modal {
+  .close-modal, .close-modal-login, .close-modal-sign-up {
     right: 20px !important;
   }
 }

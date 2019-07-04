@@ -17,13 +17,13 @@
             <div class="row">
                 <div class="col-md-10 col-md-offset-1">
                     <div class="topnav" id="myTopnav">
-                        <a href="index.html" class="topnav-item">главная</a>
+                        <a href="index.html" class="topnav-item topnav-item-logo">главная</a>
                         <a href="price-list.html" class="topnav-item">Прайс-лист</a>
                         <a href="shop.html" class="topnav-item">Магазин</a>
                         <a href="#news" class="topnav-item">новости</a>
-                        <a href="#contact" class="topnav-item">контакты</a>
-                        <a href="#" class="topnav-item">записаться</a>
-                        <a href="#" class="topnav-item-right"><img src="images/login-logo.png">Вход</a>
+                        <a href="#footer" class="topnav-item">контакты</a>
+                        <a class="topnav-item" onclick="clickButtonSignUp()">записаться</a>
+                        <a class="topnav-item-right" onclick="clickButtonLogin()"><img src="images/login-logo.png">Вход</a>
                         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
                             <i>
                                 <svg style="fill: #fff;width: 25px;height: 25px;" version="1.1"
@@ -97,17 +97,28 @@
                                             ПОДАРКОМ.
                                         </li>
                                         <li class="text-button">
-                                            <a href="">2 900 $</a>
-                                            <a href="">Купить</a>
+                                            <div class="price-buy-shop">2 900 $</div>
+                                            <a href="" class="buy-button link-style">Купить</a>
                                         </li>
                                         <li class="set-title">
                                             в набор входят
                                         </li>
-                                        <li><span></span>dawd</li>
-                                        <li><span></span>dawd</li>
-                                        <li><span></span>dawd</li>
-                                        <li><span></span>dawd</li>
-                                        <li><span></span>dawd</li>
+                                        <li class="text-item"><span class="panel-buy-shop-square"></span>СРЕДСТВО ДЛЯ
+                                            УМЫВАНИЯ (50 МЛ)
+                                        </li>
+                                        <li class="text-item"><span class="panel-buy-shop-square"></span>УВЛАЖНЯЮЩИЙ
+                                            КРЕМ (50 МЛ)
+                                        </li>
+                                        <li class="text-item"><span class="panel-buy-shop-square"></span>КРЕМ ДЛЯ БРИТЬЯ
+                                            (50 МЛ)
+                                        </li>
+                                        <li class="text-item"><span class="panel-buy-shop-square"></span>КРЕМ ПОСЛЕ
+                                            БРИТЬЯ, ШАМПУНЬ (50
+                                            МЛ)
+                                        </li>
+                                        <li class="text-item"><span class="panel-buy-shop-square"></span>УДОБНАЯ КОЖАНАЯ
+                                            КОСМЕТИЧКА
+                                        </li>
                                     </ul>
                                 </div>
                             </div>
@@ -118,7 +129,7 @@
         </div>
     </div>
 </div>
-<footer>
+<footer id="footer">
     <div class="footer">
         <div class="container">
             <div class="row">
@@ -131,11 +142,11 @@
                                     <br>
                                     АДРЕС: Г. САНКТ-ПЕТЕРБУРГ УЛ. БЕЛИНСКОГО 6
                                     <br>
-                                    ТЕЛЕФОН: +7 (812) 666-02-004
-                                    <br>
                                     <span class="address">
                                                 <a class="link-address" onclick="clickButton()">как проехать?</a>
                                             </span>
+                                    <br>
+                                    ТЕЛЕФОН: +7 (812) 666-02-004
                                 </p>
                             </div>
                         </div>
@@ -180,13 +191,83 @@
 
     </div>
 </div>
+<div class="modal-overlay-login" id="modal-login">
+    <div class="modal-login" id="modal-active-login">
+        <div class="modal-header-top-login">
+            <a class="close-modal" onclick="closeModalLogin()">
+                <svg viewBox="0 0 20 20">
+                    <path fill="#fff"
+                          d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                </svg>
+            </a>
+            <div class="modal-content-card-login">
+                <ul>
+                    <li class="login-title">Личный кабинет</li>
+                    <li class="login-show-text">введите пожалуйста свой логин и пароль</li>
+                    <li class="first-input"><input type="text" placeholder="Логин"></li>
+                    <li class="second-input"><input type="text" placeholder="Пароль"></li>
+                    <li class="save-password">
+                        <label for="save-password"><input id="save-password" type="checkbox">запомнить меня</label>
+                        <a href="">я забыл пароль!</a>
+                    </li>
+                    <li><a href="" class="link-style">войти</a></li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-overlay-sign-up" id="modal-sign-up">
+    <div class="modal-sign-up" id="modal-active-sign-up">
+        <div class="modal-header-top-sign-up">
+            <a class="close-modal" onclick="closeModalSignUp()">
+                <svg viewBox="0 0 20 20">
+                    <path fill="#fff"
+                          d="M15.898,4.045c-0.271-0.272-0.713-0.272-0.986,0l-4.71,4.711L5.493,4.045c-0.272-0.272-0.714-0.272-0.986,0s-0.272,0.714,0,0.986l4.709,4.711l-4.71,4.711c-0.272,0.271-0.272,0.713,0,0.986c0.136,0.136,0.314,0.203,0.492,0.203c0.179,0,0.357-0.067,0.493-0.203l4.711-4.711l4.71,4.711c0.137,0.136,0.314,0.203,0.494,0.203c0.178,0,0.355-0.067,0.492-0.203c0.273-0.273,0.273-0.715,0-0.986l-4.711-4.711l4.711-4.711C16.172,4.759,16.172,4.317,15.898,4.045z"></path>
+                </svg>
+            </a>
+            <div class="modal-content-card-sign-up">
+                <div class="modal-record">
+                    <div class="modal-record-items">
+                        <div class="modal-record-item-title">
+                            записаться
+                        </div>
+                        <form action="#" class="modal-record-form">
+                            <p class="modal-record-form-text">
+                                Укажите желаемую дату и время и мы свяжемся с вами для подтверждения
+                                брони
+                            </p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <label for="modal-date">Дата</label>
+                                    <input type="date" id="modal-date" placeholder="08.10.2017">
+                                    <label for="modal-name">Выше имя</label>
+                                    <input type="text" id="modal-name" placeholder="Jahongir">
+                                </div>
+                                <div class="col-md-6" style="padding: 0 15px;">
+                                    <label for="modal-time">Время</label>
+                                    <input type="text" id="modal-time" placeholder="10:00">
+                                    <label for="modal-tel-number">Телефон</label>
+                                    <input type="text" id="modal-tel-number" placeholder="+998901125597">
+                                </div>
+                            </div>
+                        </form>
+                        <a href="" class="modal-record-get-form link-style">
+                            отправить
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 <script src="https://api-maps.yandex.ru/2.1/?apikey=AN5iGl0BAAAAkS_zNgIA3T65DJJLHSUcGX0PwvNn16DaiWsAAAAAAAAAAACcYcJbjkU5eGCi9nOfIfoVFsoTww==&lang=ru_RU"
         type="text/javascript">
 </script>
 <script src="javascript/js-modal.js"></script>
 <script src="javascript/js-navbar.js"></script>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js'></script>
-<!--<script src="javascript/bootstrap.min.js"></script>-->
-<script src="javascript/yandex-js.js"></script>
+<script src="javascript/js-yandex-map.js"></script>
 </body>
 </html>

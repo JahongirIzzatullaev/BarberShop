@@ -8,6 +8,10 @@ a {
   text-decoration: none;
 }
 
+input:focus {
+  outline: none !important;
+}
+
 ul {
   -webkit-padding-start: 0;
   -moz-padding-start: 0;
@@ -459,7 +463,7 @@ footer {
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  height: 170px;
+  min-height: 170px;
   padding-top: 20px;
   padding-bottom: 40px;
   -webkit-box-pack: center;
@@ -929,9 +933,9 @@ footer {
         ul {
           display: block;
           text-transform: uppercase;
+          font-family: "PT Sans Narrow bold", sans-serif;
           .text-title {
             margin-bottom: 35px;
-            font-family: "PT Sans Narrow bold", sans-serif;
             .text-title-left {
               font-size: 14px;
               color: #000;
@@ -945,17 +949,355 @@ footer {
             }
           }
           .text-body {
-            font-family: 'PT Sans Narrow bold', sans-serif;
             color: #000;
             font-size: 14px;
             line-height: 24px;
             font-weight: 700;
             margin-bottom: 35px;
           }
+          .text-button {
+            .price-buy-shop {
+              display: inline-block;
+              padding: 11.5px 35px;
+              background-color: #e5e5e5;
+              color: #000;
+            }
+            .buy-button {
+              margin-left: -4px;
+              text-decoration: none;
+              color: #fff;
+            }
+            .buy-button:hover {
+              background-color: $color-hover;
+            }
+          }
+          .set-title {
+            margin-top: 70px;
+            font-size: 24px;
+            line-height: 30px;
+            color: #000;
+            margin-bottom: 15px;
+          }
+          .text-item {
+            font-size: 14px;
+            line-height: 24px;
+            font-weight: 700;
+          }
+          .panel-buy-shop-square {
+            position: relative;
+            top: -2px;
+            display: inline-block;
+            width: 7px;
+            height: 7px;
+            margin-right: 15px;
+            background-color: #000;
+            -webkit-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            transform: rotate(45deg);
+          }
+        }
+
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .body {
+    .body-image {
+      .sections-photo-news {
+        .background-image-photo-news {
+          min-height: 770px;
+          .column-img {
+            display: none;
+          }
+        }
+      }
+      .sections-contact-record {
+        .background-image-contact-record {
+          min-height: 770px;
+          .contact {
+            a.how-drive {
+              width: 92%;
+              display: block;
+            }
+            a.feedback {
+              width: 92%;
+              margin-left: 15px;
+              display: block;
+            }
+          }
+          .column-img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .body-price-list {
+    .body-price-list-img {
+      .price-list-content {
+        .content-title {
+          .line-title-left, .line-title-right {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .body-shop {
+    .body-shop-img {
+      .shop-content {
+        .shop-first-content {
+          .producer-content {
+            .checkboxes {
+              label {
+                margin-right: 6px;
+              }
+            }
+          }
+          .group-producer-content {
+            .radio-buttons {
+              .radio-buttons {
+                label {
+                  margin-right: 6px;
+                }
+              }
+            }
+          }
+        }
+        .shop-second-content {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+  footer {
+    .footer {
+      .col-md-4 {
+        .footer-second-item {
+          text-align: left !important;
+        }
+      }
+      .footer-third-item {
+        text-align: left;
+        .production {
+          width: 100%;
+          display: block;
         }
       }
     }
   }
 }
 
-//carusel
+@media only screen and (max-width: 768px) {
+  nav {
+    .navbar-container {
+      .topnav {
+        a {
+          margin: 0 11px;
+        }
+      }
+    }
+  }
+  .body {
+    .body-image {
+      .sections-photo-news {
+        .background-image-photo-news {
+          min-height: 770px;
+          .photo-gallery-items {
+            min-height: 555px;
+          }
+          .column-img {
+            display: none;
+          }
+        }
+      }
+      .sections-contact-record {
+        .background-image-contact-record {
+          min-height: 770px;
+          .contact {
+            a.how-drive {
+              width: 92%;
+              display: block;
+            }
+            a.feedback {
+              width: 92%;
+              margin-left: 15px;
+              display: block;
+            }
+          }
+          .column-img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .body-price-list {
+    .body-price-list-img {
+      .price-list-content {
+        .content-title {
+          .line-title-left, .line-title-right {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .body-shop {
+    .body-shop-img {
+      .shop-content {
+        .shop-first-content {
+          .producer-content {
+            .checkboxes {
+              label {
+                margin-right: 6px;
+              }
+            }
+          }
+          .group-producer-content {
+            .radio-buttons {
+              .radio-buttons {
+                label {
+                  margin-right: 6px;
+                }
+              }
+            }
+          }
+        }
+        .shop-second-content {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer {
+      .col-md-4 {
+        .footer-second-item {
+          text-align: left !important;
+        }
+      }
+      .footer-third-item {
+        text-align: left;
+        .production {
+          width: 100%;
+          display: block;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  nav {
+    .navbar-container {
+      .topnav {
+        a {
+          margin: 0 8px;
+        }
+      }
+    }
+  }
+  .body {
+    .body-image {
+      .sections-photo-news {
+        .background-image-photo-news {
+          min-height: 770px;
+          .photo-gallery-items {
+            min-height: 555px;
+          }
+          .column-img {
+            display: none;
+          }
+        }
+      }
+      .sections-contact-record {
+        .background-image-contact-record {
+          min-height: 770px;
+          .contact {
+            a.how-drive {
+              width: 92%;
+              display: block;
+            }
+            a.feedback {
+              width: 92%;
+              margin-left: 15px;
+              display: block;
+            }
+          }
+          .column-img {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .body-price-list {
+    .body-price-list-img {
+      .price-list-content {
+        .content-title {
+          .line-title-left, .line-title-right {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+  .body-shop {
+    .body-shop-img {
+      .shop-content {
+        .shop-first-content {
+          .producer-content {
+            .checkboxes {
+              label {
+                margin-right: 6px;
+              }
+            }
+          }
+          .group-producer-content {
+            .radio-buttons {
+              .radio-buttons {
+                label {
+                  margin-right: 6px;
+                }
+              }
+            }
+          }
+        }
+        .shop-second-content {
+          margin-top: 50px;
+        }
+      }
+    }
+  }
+
+  footer {
+    .footer {
+      .col-md-4 {
+        .footer-second-item {
+          text-align: left !important;
+        }
+      }
+      .footer-third-item {
+        text-align: left;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .body-price-list {
+    .body-price-list-img {
+      .price-list-content {
+        .content-title {
+          .line-title-left, .line-title-right {
+            width: 90px;
+          }
+        }
+      }
+    }
+  }
+}

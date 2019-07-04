@@ -1,5 +1,6 @@
+@charset "UTF-8";
 @media only screen and (min-width: 40em) {
-  .modal-overlay {
+  .modal-overlay, .modal-overlay-login, .modal-overlay-sign-up {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -14,13 +15,13 @@
     visibility: hidden;
     backface-visibility: hidden;
     transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), visibility 0.6s cubic-bezier(0.55, 0, 0.1, 1); }
-    .modal-overlay.active {
+    .modal-overlay.active, .modal-overlay-login.active, .modal-overlay-sign-up.active {
       opacity: 1;
       visibility: visible; } }
 /**
  * Modal
  */
-.modal {
+.modal, .modal-login, .modal-sign-up {
   display: flex;
   position: relative;
   margin: 0 auto;
@@ -34,12 +35,12 @@
   backface-visibility: hidden;
   transform: scale(1.2);
   transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1); }
-  .modal .modal-header-top {
+  .modal .modal-header-top, .modal .modal-header-top-login, .modal .modal-header-top-sign-up, .modal-login .modal-header-top, .modal-login .modal-header-top-login, .modal-login .modal-header-top-sign-up, .modal-sign-up .modal-header-top, .modal-sign-up .modal-header-top-login, .modal-sign-up .modal-header-top-sign-up {
     display: block;
     background-color: #000;
     height: 50px;
     width: 100%; }
-  .modal .close-modal {
+  .modal .close-modal, .modal .close-modal-login, .modal .close-modal-sign-up, .modal-login .close-modal, .modal-login .close-modal-login, .modal-login .close-modal-sign-up, .modal-sign-up .close-modal, .modal-sign-up .close-modal-login, .modal-sign-up .close-modal-sign-up {
     position: absolute;
     cursor: pointer;
     top: 5px;
@@ -48,19 +49,130 @@
     backface-visibility: hidden;
     transition: opacity 0.6s cubic-bezier(0.55, 0, 0.1, 1), transform 0.6s cubic-bezier(0.55, 0, 0.1, 1);
     transition-delay: 0.3s; }
-    .modal .close-modal svg {
+    .modal .close-modal svg, .modal .close-modal-login svg, .modal .close-modal-sign-up svg, .modal-login .close-modal svg, .modal-login .close-modal-login svg, .modal-login .close-modal-sign-up svg, .modal-sign-up .close-modal svg, .modal-sign-up .close-modal-login svg, .modal-sign-up .close-modal-sign-up svg {
       fill: #eee;
       width: 1.75em;
       height: 1.75em; }
-  .modal .modal-content-card {
+  .modal .modal-content-card, .modal .modal-content-card-login, .modal .modal-content-card-sign-up, .modal-login .modal-content-card, .modal-login .modal-content-card-login, .modal-login .modal-content-card-sign-up, .modal-sign-up .modal-content-card, .modal-sign-up .modal-content-card-login, .modal-sign-up .modal-content-card-sign-up {
     margin-top: 50px; }
-  .modal.active {
+  .modal.active, .modal-login.active, .modal-sign-up.active {
     visibility: visible;
     opacity: 1;
     transform: scale(1); }
-    .modal.active .close-modal {
+    .modal.active .close-modal, .modal.active .close-modal-login, .modal.active .close-modal-sign-up, .modal-login.active .close-modal, .modal-login.active .close-modal-login, .modal-login.active .close-modal-sign-up, .modal-sign-up.active .close-modal, .modal-sign-up.active .close-modal-login, .modal-sign-up.active .close-modal-sign-up {
       transform: translateY(10px);
       opacity: 1; }
+
+.modal-login {
+  background-size: auto;
+  background: url("../images/photo-news-background-image.jpg") repeat 50% 50%;
+  max-width: 460px; }
+  .modal-login .modal-header-top-login {
+    background-color: #000; }
+    .modal-login .modal-header-top-login .modal-content-card-login {
+      padding: 20px 60px 40px 60px;
+      font-family: "PT Sans Narrow bold", sans-serif;
+      text-transform: uppercase; }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li.login-title {
+        margin-bottom: 15px;
+        font-size: 30px;
+        line-height: 42px; }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li.login-show-text {
+        margin-bottom: 20px; }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li.first-input, .modal-login .modal-header-top-login .modal-content-card-login ul li.second-input {
+        display: block; }
+        .modal-login .modal-header-top-login .modal-content-card-login ul li.first-input input, .modal-login .modal-header-top-login .modal-content-card-login ul li.second-input input {
+          width: 100%;
+          margin-bottom: 18px;
+          border: 2px solid #000;
+          background-size: auto;
+          background-repeat: no-repeat;
+          text-decoration: none;
+          background-color: #f9f6f3;
+          text-align: left;
+          text-transform: uppercase;
+          padding: 8px 12px;
+          background-position: 311px center; }
+        .modal-login .modal-header-top-login .modal-content-card-login ul li.first-input input:focus, .modal-login .modal-header-top-login .modal-content-card-login ul li.second-input input:focus {
+          outline: none;
+          /* ╤Г╨▒╤А╨░╤В╤М ╤А╨░╨╝╨║╤Г */ }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li.first-input input {
+        background-image: url("../images/user-login.jpg"); }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li.second-input input {
+        background-image: url("../images/lock-login.jpg"); }
+      .modal-login .modal-header-top-login .modal-content-card-login ul .save-password {
+        margin-bottom: 10px; }
+        .modal-login .modal-header-top-login .modal-content-card-login ul .save-password label {
+          cursor: pointer;
+          top: -6px;
+          position: relative; }
+          .modal-login .modal-header-top-login .modal-content-card-login ul .save-password label input {
+            width: 15px;
+            height: 15px;
+            top: 2px;
+            position: relative;
+            margin-right: 10px; }
+        .modal-login .modal-header-top-login .modal-content-card-login ul .save-password a {
+          float: right;
+          color: #000;
+          text-decoration: underline; }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li a.link-style {
+        display: block;
+        color: #fff;
+        text-decoration: none; }
+      .modal-login .modal-header-top-login .modal-content-card-login ul li a.link-style:hover {
+        background-color: #a06600; }
+
+.modal-sign-up {
+  background-size: auto;
+  background: url("../images/photo-news-background-image.jpg") repeat 50% 50%;
+  max-width: 460px; }
+  .modal-sign-up .modal-content-card-sign-up .modal-record {
+    padding: 20px 60px 40px 60px; }
+    .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-item-title {
+      margin-bottom: 15px;
+      font-family: 'PT Sans Narrow bold', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 42px;
+      text-transform: uppercase;
+      color: #000; }
+    .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-form .modal-record-form-text {
+      font-size: 14px;
+      line-height: 24px;
+      font-weight: 700;
+      font-family: 'PT Sans Narrow bold', sans-serif;
+      display: block;
+      color: #000;
+      text-align: left;
+      text-transform: uppercase;
+      margin-bottom: 10px; }
+    .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-form .col-md-6 {
+      padding: 0 15px;
+      font-family: 'PT Sans Narrow bold', sans-serif;
+      font-weight: 700;
+      color: #000;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 24px; }
+      .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-form .col-md-6 label {
+        margin-left: 10px; }
+      .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-form .col-md-6 input {
+        text-transform: uppercase;
+        width: 100%;
+        padding: 7px;
+        margin-bottom: 10px;
+        border-color: #000;
+        font-family: 'PT Sans Narrow bold', sans-serif;
+        font-weight: 300; }
+      .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-form .col-md-6 input:focus {
+        outline: none; }
+    .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-get-form {
+      display: block;
+      text-decoration: none; }
+    .modal-sign-up .modal-content-card-sign-up .modal-record .modal-record-items .modal-record-get-form:hover {
+      background-color: #a06600;
+      color: #fff; }
 
 /**
  * Mobile styling
@@ -69,7 +181,7 @@
   h1 {
     font-size: 1.5rem; }
 
-  .modal {
+  .modal, .modal-login, .modal-sign-up {
     position: fixed;
     top: 0;
     left: 0;
@@ -80,5 +192,5 @@
     transform: scale(1.1);
     padding: 0 !important; }
 
-  .close-modal {
+  .close-modal, .close-modal-login, .close-modal-sign-up {
     right: 20px !important; } }
